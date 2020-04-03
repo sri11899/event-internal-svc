@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: demo-api
+spec: 
+  selector:
+    matchLabels:
+      app: demo-api
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: demo-api
+    spec:
+      containers:
+      - name: demo-api
+        image: gcr.io/roidtc-0330-attendee201/internal-image:v2.0.0
+        ports:
+        - containerPort: 8082
+            
+        
